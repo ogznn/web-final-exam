@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Vize_Ödevi.Models.Tedarikci>
+
+@{
+    ViewData["Title"] = "Listele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Tedarikçi Listesi</h1>
+
+<p>
+    <a asp-action="yeni">Yeni Kayıt</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+            Tedarikçi ID    
+            </th>
+            <th>
+            Tedarikçi Firma   
+            </th>
+            <th>
+            Tedarikçi Adres    
+            </th>
+            <th>
+            Tedarikçi Telefon Numarası  
+            </th>
+            <th>
+            Tedarikçi Mail          
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tedarikciFirma)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tedarikciAdres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tedarikciTel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tedarikciMail)
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle", "Guncelle", new { id = item.Id }) |
+                @Html.ActionLink("Detay", "Detay", new { id = item.Id }) |
+                @Html.ActionLink("Sil", "Sil", new { id = item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

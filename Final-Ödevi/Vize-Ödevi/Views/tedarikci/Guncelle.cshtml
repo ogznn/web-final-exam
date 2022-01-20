@@ -1,0 +1,51 @@
+﻿@model Vize_Ödevi.Models.Tedarikci
+
+@{
+    ViewData["Title"] = "Guncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Guncelle</h1>
+
+<h4>Tedarikci</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Guncelle">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label">Tedarikçi ID</label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tedarikciFirma" class="control-label">Tedarikçi Firma</label>
+                <input asp-for="tedarikciFirma" class="form-control" />
+                <span asp-validation-for="tedarikciFirma" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tedarikciAdres" class="control-label">Tedarikçi Adres</label>
+                <input asp-for="tedarikciAdres" class="form-control" />
+                <span asp-validation-for="tedarikciAdres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tedarikciTel" class="control-label">Tedarikçi Telefon Numarası </label>
+                <input asp-for="tedarikciTel" class="form-control" />
+                <span asp-validation-for="tedarikciTel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tedarikciMail" class="control-label">Tedarikçi Mail</label>
+                <input asp-for="tedarikciMail" class="form-control" />
+                <span asp-validation-for="tedarikciMail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Listele">Geri Dön</a>
+</div>
+

@@ -1,0 +1,51 @@
+﻿@model Vize_Ödevi.Models.Market
+
+@{
+    ViewData["Title"] = "Guncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Guncelle</h1>
+
+<h4>Market</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Guncelle">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label">Ürün Id </label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="urunAd" class="control-label">Ürün Adı</label>
+                <input asp-for="urunAd" class="form-control" />
+                <span asp-validation-for="urunAd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tedarikciId" class="control-label">Tedarikçi Id</label>
+                <input asp-for="tedarikciId" class="form-control" />
+                <span asp-validation-for="tedarikciId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="alisFiyat" class="control-label">Alış Fiyatı </label>
+                <input asp-for="alisFiyat" class="form-control" />
+                <span asp-validation-for="alisFiyat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="satisFiyat" class="control-label">Satış Fiyatı</label>
+                <input asp-for="satisFiyat" class="form-control" />
+                <span asp-validation-for="satisFiyat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Listele">Geri Dön</a>
+</div>
+

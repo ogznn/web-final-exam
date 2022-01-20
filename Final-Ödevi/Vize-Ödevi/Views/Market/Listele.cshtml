@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Vize_Ödevi.Models.Market>
+
+@{
+    ViewData["Title"] = "Listele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Ürünler Listesi</h1>
+
+<p>
+    <a asp-action="yeni">Yeni Kayıt</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Ürün Id
+            </th>
+            <th>
+                Ürün Adı
+            </th>
+            <th>
+                Tedarikçi Id
+            </th>
+            <th>
+                Alış Fiyatı
+            </th>
+            <th>
+                Satış Fiyat
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.urunAd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tedarikciId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.alisFiyat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.satisFiyat)
+                </td>
+                <td>
+                    @Html.ActionLink("Güncelle", "Guncelle", new { id = item.Id }) |
+                    @Html.ActionLink("Detay", "Detay", new { id = item.Id }) |
+                    @Html.ActionLink("Sil", "Sil", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

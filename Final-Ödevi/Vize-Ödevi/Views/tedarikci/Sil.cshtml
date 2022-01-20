@@ -1,0 +1,51 @@
+﻿@model Vize_Ödevi.Models.Tedarikci
+
+@{
+    ViewData["Title"] = "Sil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Sil</h1>
+
+<h3>Bunu silmek istediğinizden emin misiniz?</h3>
+<div>
+    <h4>Tedarikci</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+        Tedarikçi ID        
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+        Tedarikçi Firma    
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tedarikciFirma)
+        </dd>
+        <dt class = "col-sm-2">
+        Tedarikçi Adres   
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tedarikciAdres)
+        </dd>
+        <dt class = "col-sm-2">
+        Tedarikçi Telefon 
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tedarikciTel)
+        </dd>
+        <dt class = "col-sm-2">
+        Tedarikçi Mail
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tedarikciMail)
+        </dd>
+    </dl>
+    
+    <form asp-action="Sil">
+        <input type="submit" value="Sil" class="btn btn-danger" /> |
+        <a asp-action="Listele">Geri Dön</a>
+    </form>
+</div>
